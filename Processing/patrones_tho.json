@@ -1,0 +1,13 @@
+{
+"patron":
+        ["(.*) 172.23.0.1 (.*)]: (.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*);;(.*);(.*);(.*)",
+        "(.*) 172.23.0.1 (.*)]: (.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*);(.*);(a:.*:{.*});(.*);(.*);(.*)",
+        ".* 172.23.0.1 (.*)]: (ERROR .*)"],
+"matching":
+        [["message","dockerTimestamp","containerID","container","idLog","url","componente","action","target","contextId","userId","courseId","anonymous","other","timecreated","origin","ip"],
+        ["message","dockerTimestamp","containerID","container","idLog","url","componente","action","target","contextId","userId","courseId","anonymous","other","timecreated","origin","ip"],
+        ["message","containerID","errorInfo","typeOfLogMessage"]],
+"elements":
+        [["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"],
+	["0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"],
+        ["0","0","0","-1"]]}

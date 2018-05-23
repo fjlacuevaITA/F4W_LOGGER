@@ -1,0 +1,49 @@
+version: '3'
+volumes:
+  f4w_logger_syslog_log:
+  f4w_logger_syslog_conf:
+  f4w_logger_kafka_conf:
+  f4w_logger_syslog_etc:
+  f4w_logger_syslog_general:
+  f4w_logger_kafka_server:
+
+services:
+  f4w_logger_syslog:
+    build: ./SYSLOG
+    image: syslog:prueba
+    #restart: always
+    volumes:
+      - f4w_logger_syslog_log:/var/log
+      - f4w_logger_syslog_conf:/etc/syslog-ng/
+      - f4w_logger_syslog_etc:/etc/default
+    networks: 
+      - default
+  f4w_logger_zookeeper:
+    image: 2bf9f630d083
+    #restart: always
+    networks: 
+      - default
+    expose: 
+      - "2181"
+  f4w_logger_kafka:
+    build: ./KAFKA
+    image: ches/kafka
+    #restart: always
+    volumes: 
+      - f4w_logger_kafka_conf:/kafka/config
+      - f4w_logger_kafka_server:/kafka
+    depends_on:
+      - f4w_logger_zookeeper
+    networks:
+      - default
+    expose: 
+      - "9092"
+    ports:
+      - "9095:9092"
+  f4w_logger_mongo:
+    image: mongo
+    #restart: always
+    networks: 
+      - default
+    ports: 
+      - "27000:27017"

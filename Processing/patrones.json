@@ -1,0 +1,6 @@
+{
+"patron":[".*\"started_at\":(\\d*),.*\"status\":(\\d*),.*\"method\":\"(.*)\",\"uri\".*\"size.*access_token=(.*)\",\"query.*\"name\":(.*),\"http_if_terminated.*\"latencies\":{(.*)}}.*", ".*\"started_at\":(\\d*),.*\"status\":(\\d*),.*\"method\":\"(.*)\",\"uri\".*\"size.*\"name\":(.*),\"http_if_terminated.*\"latencies\":{(.*)}}.*",".*\"started_at\":(\\d*),.*\"status\":(\\d*),.*\"method\":\"(.*)\",\"uri\".*\"size.*\"name\":(.*),\"retries.*\"latencies\":{(.*)}}.*"], 
+"matching":[["UnixTimeStamp","status","method","access_token","funcionality","latencies"],["UnixTimeStamp","status","method","access_token","funcionality","latencies"],["UnixTimeStamp","status","method","access_token","funcionality","latencies"]], 
+"elements":[["0","0","0","0","0","0"],["0","0","0","cpu","0","0"],["0","0","0","cpu","0","0"]]}
+
+
